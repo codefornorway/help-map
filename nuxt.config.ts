@@ -4,4 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['nuxt-mapbox'],
   future: { compatibilityVersion: 4 },
+  mapbox: {
+    accessToken: process.env.MAPBOX_ACCESS_TOKEN!,
+  },
 });
