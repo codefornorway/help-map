@@ -22,103 +22,113 @@ const locations: Location[] = [
   },
 ];
 
-const selectedType = ref<string>('all');
+const route = useRoute();
+const router = useRouter();
+const selectedLocation = ref<string | null>((route.query.location as string) || null);
 
-const filteredLocations = computed(() => {
-  if (selectedType.value === 'all') return locations;
-  return locations.filter(location => location.type === selectedType.value);
-});
-
-const focusOnLocation = (coordinates: [number, number]) => {
-  useMapbox('main-map', map => {
+const focusOnLocation = (location: Location) => {
+  selectedLocation.value = location.name;
+  useMapbox('main-map', (map, instance) => {
     if (map) {
-      map.flyTo({ center: coordinates, zoom: 10 });
+      map.flyTo({ center: location.coordinates, zoom: 10 });
+      Object.values(instance.markers).forEach((marker: any) => {
+        marker.getElement().onclick = () => {
+          const markerLocation = locations.find(loc => loc.coordinates[0] === marker.getLngLat().lng && loc.coordinates[1] === marker.getLngLat().lat);
+          if (markerLocation) {
+            selectedLocation.value = markerLocation.name;
+            router.push({ query: { location: markerLocation.name } });
+          }
+        };
+      });
     }
   });
+  router.push({ query: { location: location.name } });
+};
+
+// URL'deki location query'sini izle
+watch(
+  () => route.query.location,
+  newLocation => {
+    selectedLocation.value = (newLocation as string) || null;
+    if (newLocation) {
+      const location = locations.find(loc => loc.name === newLocation);
+      if (location) {
+        focusOnLocation(location);
+      }
+    }
+  },
+  { immediate: true }
+);
+
+// Mekan türü için okunabilir isim
+const getTypeLabel = (type: string) => {
+  switch (type) {
+    case 'food':
+      return 'Yemek';
+    case 'clothing':
+      return 'Kıyafet';
+    case 'shelter':
+      return 'Barınak';
+    default:
+      return type;
+  }
 };
 </script>
 
 <template>
-  <div>
-    <h1>Norveç'teki Ücretsiz Yardım Mekanları</h1>
-    <div class="filter">
-      <label for="type-filter">Filtrele:</label>
-      <select id="type-filter" v-model="selectedType">
-        <option value="all">Tümü</option>
-        <option value="food">Yemek</option>
-        <option value="clothing">Kıyafet</option>
-        <option value="shelter">Barınak</option>
-      </select>
-    </div>
-    <div class="container">
-      <div class="map-container">
-        <MapboxMap
-          map-id="main-map"
-          style="width: 100%; height: 100%"
-          :options="{
-            center: [10.7522, 59.9139],
-            zoom: 5,
-            style: 'mapbox://styles/mapbox/streets-v11',
-          }">
-          <MapboxDefaultMarker v-for="(location, index) in filteredLocations" :key="location.name" :marker-id="`marker-${index}`" :lnglat="location.coordinates">
-            <MapboxDefaultPopup :popup-id="`popup-${index}`" :options="{ closeOnClick: false }" :lnglat="location.coordinates">
-              <h3>{{ location.name }}</h3>
-              <p>{{ location.description }}</p>
-            </MapboxDefaultPopup>
-          </MapboxDefaultMarker>
-        </MapboxMap>
+  <div class="min-h-screen bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+        <h1 class="text-xl font-bold text-gray-900">Norveç'teki Ücretsiz Yardım Mekanları</h1>
       </div>
-      <div class="list-container">
-        <ul>
-          <li v-for="location in filteredLocations" :key="location.name" @click="focusOnLocation(location.coordinates)" class="location-item">
-            <h3>{{ location.name }}</h3>
-            <p>{{ location.description }}</p>
-          </li>
-        </ul>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+        <div class="col-span-1 bg-white rounded-lg shadow-md p-4">
+          <ul class="space-y-2">
+            <li
+              v-for="location in locations"
+              :key="location.name"
+              @click="focusOnLocation(location)"
+              :class="['p-3 rounded-md cursor-pointer transition-colors', selectedLocation === location.name ? 'bg-indigo-100 text-indigo-900' : 'hover:bg-gray-100']">
+              <h3 class="text-base font-semibold text-gray-800">{{ location.name }}</h3>
+              <p class="text-sm text-gray-600">{{ location.description }}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-1 lg:col-span-3 h-80 sm:h-96 rounded-lg overflow-hidden shadow-md">
+          <MapboxMap
+            map-id="main-map"
+            class="w-full h-full"
+            :options="{
+              center: [10.7522, 59.9139],
+              zoom: 5,
+              style: 'mapbox://styles/mapbox/streets-v11',
+            }">
+            <MapboxDefaultMarker v-for="(location, index) in locations" :key="location.name" :marker-id="`marker-${index}`" :lnglat="location.coordinates" />
+          </MapboxMap>
+        </div>
+        <div class="col-span-1 bg-white rounded-lg shadow-md p-4">
+          <div v-if="selectedLocation" class="space-y-2">
+            <h2 class="text-lg font-semibold text-gray-800">
+              {{ locations.find(loc => loc.name === selectedLocation)?.name }}
+            </h2>
+            <p class="text-sm text-gray-600">
+              <strong>Açıklama:</strong>
+              {{ locations.find(loc => loc.name === selectedLocation)?.description }}
+            </p>
+            <p class="text-sm text-gray-600">
+              <strong>Tür:</strong>
+              {{ getTypeLabel(locations.find(loc => loc.name === selectedLocation)?.type || '') }}
+            </p>
+            <p class="text-sm text-gray-600">
+              <strong>Koordinatlar:</strong>
+              [{{ locations.find(loc => loc.name === selectedLocation)?.coordinates.join(', ') }}]
+            </p>
+          </div>
+          <div v-else class="text-sm text-gray-600">Bir mekan seçin</div>
+        </div>
       </div>
-    </div>
+    </main>
   </div>
 </template>
-
-<style scoped>
-.container {
-  display: flex;
-  gap: 20px;
-}
-.map-container {
-  flex: 1;
-  height: 500px;
-}
-.list-container {
-  flex: 1;
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
-.location-item {
-  margin-bottom: 1rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 4px;
-}
-.location-item:hover {
-  background-color: #f0f0f0;
-}
-h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #333;
-}
-p {
-  margin: 0.5rem 0 0;
-  color: #666;
-}
-.filter {
-  margin-bottom: 1rem;
-}
-select {
-  padding: 0.5rem;
-  font-size: 1rem;
-}
-</style>
