@@ -1,0 +1,150 @@
+[
+  {
+    "name": "Oslo Food Bank",
+    "description": "İhtiyaç sahiplerine ücretsiz yemek",
+    "coordinates": [10.7522, 59.9139],
+    "type": "food",
+    "address": "Karl Johans gate 1, 0154 Oslo, Norway"
+  },
+  {
+    "name": "Bergen Clothing Drive",
+    "description": "Ücretsiz kıyafet ve battaniye",
+    "coordinates": [5.3221, 60.3913],
+    "type": "clothing",
+    "address": "Bryggen, 5003 Bergen, Norway"
+  },
+  {
+    "name": "Stavanger Shelter",
+    "description": "Gece barınma hizmeti",
+    "coordinates": [5.7331, 58.969],
+    "type": "shelter",
+    "address": "St. Olavs gate 29, 4000 Stavanger, Norway"
+  },
+  {
+    "name": "Trondheim Soup Kitchen",
+    "description": "Günlük sıcak yemek servisi",
+    "coordinates": [10.3951, 63.4305],
+    "type": "food",
+    "address": "Olav Tryggvasons gate 30, 7011 Trondheim, Norway"
+  },
+  {
+    "name": "Drammen Community Center",
+    "description": "Topluluk etkinlikleri ve yardımlar",
+    "coordinates": [10.2045, 59.7439],
+    "type": "community",
+    "address": "Bragernes Torg 1, 3017 Drammen, Norway"
+  },
+  {
+    "name": "Tromsø Mental Health Support",
+    "description": "Ruh sağlığı desteği ve danışmanlık",
+    "coordinates": [18.956, 69.6496],
+    "type": "mental health",
+    "address": "Storgata 45, 9008 Tromsø, Norway"
+  },
+  { "name": "Bodø Youth Outreach", "description": "Gençler için sosyal hizmetler", "coordinates": [14.4046, 67.2804], "type": "youth", "address": "Storgata 1, 8006 Bodø, Norway" },
+  {
+    "name": "Ålesund Winter Clothing Drive",
+    "description": "Kışlık giysi yardımı",
+    "coordinates": [6.1519, 62.4722],
+    "type": "clothing",
+    "address": "Apotekergata 1, 6004 Ålesund, Norway"
+  },
+  {
+    "name": "Haugesund Emergency Shelter",
+    "description": "Acil durum barınma hizmeti",
+    "coordinates": [5.2697, 59.4139],
+    "type": "shelter",
+    "address": "Strandgata 140, 5527 Haugesund, Norway"
+  },
+  {
+    "name": "Trondheim Shelter",
+    "description": "Ücretsiz barınak ve yatak",
+    "coordinates": [10.3951, 63.4305],
+    "type": "shelter",
+    "address": "Kongens gate 34, 7011 Trondheim, Norway"
+  },
+  {
+    "name": "Stavanger Soup Kitchen",
+    "description": "Günlük sıcak yemek servisi",
+    "coordinates": [5.7331, 58.969],
+    "type": "food",
+    "address": "Kongsgata 23, 4005 Stavanger, Norway"
+  },
+  {
+    "name": "Oslo Mental Health Support",
+    "description": "Ruh sağlığı desteği ve danışmanlık",
+    "coordinates": [10.7522, 59.9139],
+    "type": "mental health",
+    "address": "Bislettgata 4, 0168 Oslo, Norway"
+  },
+  {
+    "name": "Bergen Youth Outreach",
+    "description": "Gençler için sosyal hizmetler",
+    "coordinates": [5.3221, 60.3913],
+    "type": "youth",
+    "address": "Torgallmenningen 1, 5014 Bergen, Norway"
+  },
+  {
+    "name": "Kristiansand Food Distribution",
+    "description": "Gıda yardımı ve dağıtımı",
+    "coordinates": [8.0419, 58.1467],
+    "type": "food",
+    "address": "Markens gate 1, 4611 Kristiansand, Norway"
+  },
+  {
+    "name": "Kristiansand Community Center",
+    "description": "Topluluk etkinlikleri ve yardımlar",
+    "coordinates": [8.0419, 58.1467],
+    "type": "community",
+    "address": "Tangen 1, 4610 Kristiansand, Norway"
+  },
+  {
+    "name": "Lillehammer Winter Sports Support",
+    "description": "Kış sporları etkinlikleri ve yardımları",
+    "coordinates": [10.4661, 61.1152],
+    "type": "sports",
+    "address": "Storgata 1, 2609 Lillehammer, Norway"
+  },
+  {
+    "name": "Molde Arts and Culture Center",
+    "description": "Sanat ve kültür etkinlikleri",
+    "coordinates": [7.1606, 62.7375],
+    "type": "culture",
+    "address": "Storgata 1, 6413 Molde, Norway"
+  },
+  {
+    "name": "Sandnes Family Support Services",
+    "description": "Aile destek hizmetleri",
+    "coordinates": [5.7349, 58.8534],
+    "type": "family",
+    "address": "Langgata 1, 4306 Sandnes, Norway"
+  },
+  {
+    "name": "Hamar Senior Citizens Program",
+    "description": "Yaşlılar için sosyal etkinlikler",
+    "coordinates": [11.0683, 60.7941],
+    "type": "seniors",
+    "address": "Stortorget 1, 2317 Hamar, Norway"
+  },
+  {
+    "name": "Gjøvik Environmental Awareness",
+    "description": "Çevre bilinci ve geri dönüşüm programları",
+    "coordinates": [10.6902, 60.7941],
+    "type": "environment",
+    "address": "Jernbanegata 1, 2821 Gjøvik, Norway"
+  },
+  {
+    "name": "Kongsberg Technology and Innovation Hub",
+    "description": "Teknoloji ve yenilik destek programları",
+    "coordinates": [9.6501, 59.6592],
+    "type": "technology",
+    "address": "Stortorvet 1, 3611 Kongsberg, Norway"
+  },
+  {
+    "name": "Larvik Arts and Crafts Fair",
+    "description": "El sanatları fuarı ve atölyeleri",
+    "coordinates": [10.0343, 59.0525],
+    "type": "arts",
+    "address": "Torget 1, 3256 Larvik, Norway"
+  }
+]

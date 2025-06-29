@@ -3,4 +3,5 @@ export interface Location {
   description: string;
   coordinates: [number, number];
   type: 'food' | 'clothing' | 'shelter';
+  address: string;
 }
