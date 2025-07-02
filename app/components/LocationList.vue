@@ -9,7 +9,7 @@ const { locations, selected, focus, reset } = useLocations();
     </div>
 
     <div v-if="selected" class="p-4 space-y-3">
-      <button @click="reset" class="text-sm text-indigo-600 hover:underline">&larr; Geri</button>
+      <button @click="reset" class="text-sm cursor-pointer text-indigo-600 hover:underline">&larr; Geri</button>
       <h2 class="text-lg font-semibold">{{ selected.name }}</h2>
       <p class="text-sm text-gray-600">
         <strong>Açıklama:</strong>
