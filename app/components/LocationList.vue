@@ -5,7 +5,7 @@ const { locations, selected, focus, reset } = useLocations();
 <template>
   <div>
     <div class="p-4 border-b border-gray-200">
-      <h1 class="text-xl font-bold text-gray-900">Yardım Noktaları</h1>
+      <h1 class="text-xl font-bold text-gray-900">HELP MAP</h1>
     </div>
 
     <div v-if="selected" class="p-4 space-y-3">
