@@ -1,3 +1,5 @@
+![help-map](https://github.com/user-attachments/assets/8d539bc3-9ee4-4b20-a374-f51e88e7851f)
+
 # Help Map
 
 ## Overview
