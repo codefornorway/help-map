@@ -27,7 +27,7 @@ This project is built with [Nuxt 3](https://nuxt.com/), uses [Mapbox](https://ww
 
 - Node.js (v16 or higher)
 - npm or Yarn
-- A Mapbox account and API key
+- A Mapbox account and access token
 - A Supabase account and project setup
 
 ### Installation
@@ -51,7 +51,7 @@ This project is built with [Nuxt 3](https://nuxt.com/), uses [Mapbox](https://ww
    Create a `.env` file in the project root and add the following:
 
    ```
-   MAPBOX_API_KEY=your_mapbox_api_key
+   MAPBOX_ACCESS_TOKEN=your_mapbox_access_token
    SUPABASE_URL=your_supabase_project_url
    SUPABASE_KEY=your_supabase_public_key
    ```
@@ -68,8 +68,8 @@ This project is built with [Nuxt 3](https://nuxt.com/), uses [Mapbox](https://ww
 
 ### Configuring Mapbox
 
-- Obtain a Mapbox API key from [Mapbox](https://www.mapbox.com/).
-- Ensure the key is added to your `.env` file as `MAPBOX_API_KEY`.
+- Obtain a Mapbox access token from [Mapbox](https://www.mapbox.com/).
+- Ensure the token is added to your `.env` file as `MAPBOX_ACCESS_TOKEN`.
 - Configure Mapbox in your Nuxt project (e.g., in a plugin or component).
 
 ### Configuring Supabase
