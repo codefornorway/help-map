@@ -96,7 +96,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For questions or feedback, reach out to the Code for Norway team via [GitHub Issues](https://github.com/codefornorway/help-map/issues) or contact us at [sefabulak@icloud.com].
+For questions or feedback, reach out to the Code for Norway team via [GitHub Issues](https://github.com/codefornorway/help-map/issues) or contact us at sefabulak@icloud.com.
 
 ---
 
