@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "node --experimental-strip-types --loader ./tests/loader.mjs --test tests/useLocations.spec.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
