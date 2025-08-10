@@ -1,150 +1,262 @@
 [
   {
-    "name": "Oslo Food Bank",
-    "description": "İhtiyaç sahiplerine ücretsiz yemek",
-    "coordinates": [10.7522, 59.9139],
-    "type": "food",
-    "address": "Karl Johans gate 1, 0154 Oslo, Norway"
-  },
-  {
-    "name": "Bergen Clothing Drive",
-    "description": "Ücretsiz kıyafet ve battaniye",
-    "coordinates": [5.3221, 60.3913],
-    "type": "clothing",
-    "address": "Bryggen, 5003 Bergen, Norway"
-  },
-  {
-    "name": "Stavanger Shelter",
-    "description": "Gece barınma hizmeti",
-    "coordinates": [5.7331, 58.969],
-    "type": "shelter",
-    "address": "St. Olavs gate 29, 4000 Stavanger, Norway"
-  },
-  {
-    "name": "Trondheim Soup Kitchen",
-    "description": "Günlük sıcak yemek servisi",
-    "coordinates": [10.3951, 63.4305],
-    "type": "food",
-    "address": "Olav Tryggvasons gate 30, 7011 Trondheim, Norway"
-  },
-  {
-    "name": "Drammen Community Center",
-    "description": "Topluluk etkinlikleri ve yardımlar",
-    "coordinates": [10.2045, 59.7439],
+    "name": "Kirkens Bymisjon Arendal",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
     "type": "community",
-    "address": "Bragernes Torg 1, 3017 Drammen, Norway"
+    "address": "Torvet 2, 4836 Arendal",
+    "city": "Arendal",
+    "coordinates": [8.7722, 58.4615],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Tromsø Mental Health Support",
-    "description": "Ruh sağlığı desteği ve danışmanlık",
-    "coordinates": [18.956, 69.6496],
-    "type": "mental health",
-    "address": "Storgata 45, 9008 Tromsø, Norway"
-  },
-  { "name": "Bodø Youth Outreach", "description": "Gençler için sosyal hizmetler", "coordinates": [14.4046, 67.2804], "type": "youth", "address": "Storgata 1, 8006 Bodø, Norway" },
-  {
-    "name": "Ålesund Winter Clothing Drive",
-    "description": "Kışlık giysi yardımı",
-    "coordinates": [6.1519, 62.4722],
-    "type": "clothing",
-    "address": "Apotekergata 1, 6004 Ålesund, Norway"
-  },
-  {
-    "name": "Haugesund Emergency Shelter",
-    "description": "Acil durum barınma hizmeti",
-    "coordinates": [5.2697, 59.4139],
-    "type": "shelter",
-    "address": "Strandgata 140, 5527 Haugesund, Norway"
-  },
-  {
-    "name": "Trondheim Shelter",
-    "description": "Ücretsiz barınak ve yatak",
-    "coordinates": [10.3951, 63.4305],
-    "type": "shelter",
-    "address": "Kongens gate 34, 7011 Trondheim, Norway"
-  },
-  {
-    "name": "Stavanger Soup Kitchen",
-    "description": "Günlük sıcak yemek servisi",
-    "coordinates": [5.7331, 58.969],
-    "type": "food",
-    "address": "Kongsgata 23, 4005 Stavanger, Norway"
-  },
-  {
-    "name": "Oslo Mental Health Support",
-    "description": "Ruh sağlığı desteği ve danışmanlık",
-    "coordinates": [10.7522, 59.9139],
-    "type": "mental health",
-    "address": "Bislettgata 4, 0168 Oslo, Norway"
-  },
-  {
-    "name": "Bergen Youth Outreach",
-    "description": "Gençler için sosyal hizmetler",
-    "coordinates": [5.3221, 60.3913],
-    "type": "youth",
-    "address": "Torgallmenningen 1, 5014 Bergen, Norway"
-  },
-  {
-    "name": "Kristiansand Food Distribution",
-    "description": "Gıda yardımı ve dağıtımı",
-    "coordinates": [8.0419, 58.1467],
-    "type": "food",
-    "address": "Markens gate 1, 4611 Kristiansand, Norway"
-  },
-  {
-    "name": "Kristiansand Community Center",
-    "description": "Topluluk etkinlikleri ve yardımlar",
-    "coordinates": [8.0419, 58.1467],
+    "name": "Kirkens Bymisjon Bergen",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
     "type": "community",
-    "address": "Tangen 1, 4610 Kristiansand, Norway"
+    "address": "Kong Oscars gate 62, 5017 Bergen",
+    "city": "Bergen",
+    "coordinates": [5.3317, 60.3926],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Lillehammer Winter Sports Support",
-    "description": "Kış sporları etkinlikleri ve yardımları",
-    "coordinates": [10.4661, 61.1152],
-    "type": "sports",
-    "address": "Storgata 1, 2609 Lillehammer, Norway"
+    "name": "Kirkens Bymisjon Bodø",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Bankgata 9, 8006 Bodø",
+    "city": "Bodø",
+    "coordinates": [14.388374, 67.28548],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Molde Arts and Culture Center",
-    "description": "Sanat ve kültür etkinlikleri",
-    "coordinates": [7.1606, 62.7375],
-    "type": "culture",
-    "address": "Storgata 1, 6413 Molde, Norway"
+    "name": "Kirkens Bymisjon Kristiansand",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Gravane 6, 4610 Kristiansand",
+    "city": "Kristiansand",
+    "coordinates": [7.995379, 58.141552],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Sandnes Family Support Services",
-    "description": "Aile destek hizmetleri",
-    "coordinates": [5.7349, 58.8534],
-    "type": "family",
-    "address": "Langgata 1, 4306 Sandnes, Norway"
+    "name": "Kirkens Bymisjon Mosjøen",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "C. M. Havigs gate 15, 8656 Mosjøen",
+    "city": "Mosjøen",
+    "coordinates": [13.1900161, 65.8381828],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Hamar Senior Citizens Program",
-    "description": "Yaşlılar için sosyal etkinlikler",
-    "coordinates": [11.0683, 60.7941],
-    "type": "seniors",
-    "address": "Stortorget 1, 2317 Hamar, Norway"
+    "name": "Kirkens Bymisjon Tromsø",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Parkgata 22, 9008 Tromsø",
+    "city": "Tromsø",
+    "coordinates": [18.952096, 69.650954],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Gjøvik Environmental Awareness",
-    "description": "Çevre bilinci ve geri dönüşüm programları",
-    "coordinates": [10.6902, 60.7941],
-    "type": "environment",
-    "address": "Jernbanegata 1, 2821 Gjøvik, Norway"
+    "name": "Kirkens Bymisjon Trondheim",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Munkegata 4, 7013 Trondheim",
+    "city": "Trondheim",
+    "coordinates": [10.3963, 63.4282],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Kongsberg Technology and Innovation Hub",
-    "description": "Teknoloji ve yenilik destek programları",
-    "coordinates": [9.6501, 59.6592],
-    "type": "technology",
-    "address": "Stortorvet 1, 3611 Kongsberg, Norway"
+    "name": "Kirkens Bymisjon Ålesund",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Parkgata 9, 6003 Ålesund",
+    "city": "Ålesund",
+    "coordinates": [6.1636, 62.4724],
+    "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Larvik Arts and Crafts Fair",
-    "description": "El sanatları fuarı ve atölyeleri",
-    "coordinates": [10.0343, 59.0525],
-    "type": "arts",
-    "address": "Torget 1, 3256 Larvik, Norway"
+    "name": "Kirkens Bymisjon Porsgrunn",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Storgata 141, 3915 Porsgrunn",
+    "city": "Porsgrunn",
+    "coordinates": [9.654239, 59.140351],
+    "source": "https://kirkensbymisjon.no/kontakt/"
+  },
+  {
+    "name": "Kirkens Bymisjon Tønsberg",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Storgaten 7–9, 3126 Tønsberg",
+    "city": "Tønsberg",
+    "coordinates": [10.409372860278912, 59.26576528134484],
+    "source": "https://kirkensbymisjon.no/kontakt/"
+  },
+  {
+    "name": "Kirkens Bymisjon Oslo",
+    "description": "Local office / day services lead",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Tollbugata 3, 0152 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.7472798, 59.9097624],
+    "source": "https://kirkensbymisjon.no/kontakt/"
+  },
+  {
+    "name": "Matsentralen Vestland",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Toppemyr 7, 5136 Mjølkeråen",
+    "city": "Vestland (Bergen region)",
+    "coordinates": [5.3259, 60.3943],
+    "source": "https://www.matsentralen.no/kontakt"
+  },
+  {
+    "name": "Robin Hood Huset",
+    "description": "Free meals & social support",
+    "organization": "Stiftelsen Robin Hood Huset",
+    "type": "community",
+    "address": "Magnus Barfots gate 22, 5015 Bergen",
+    "city": "Bergen",
+    "coordinates": [5.3177, 60.3898],
+    "source": "https://www.robinhoodhuset.no"
+  },
+  {
+    "name": "Matsentralen Innlandet",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Stolvstadlia 7b, 2360 Rudshøgda",
+    "city": "Rudshøgda",
+    "coordinates": [10.8848, 60.8189],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
+    "name": "Matsentralen Nord-Norge",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Strandveien 144c, 9006 Tromsø",
+    "city": "Tromsø",
+    "coordinates": [18.9745, 69.6433],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
+    "name": "Matsentralen Oslo",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Gladengveien 17, 0661 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.7916, 59.9113],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
+    "name": "Matsentralen Rogaland",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Hoveveien 9, 4306 Sandnes",
+    "city": "Sandnes",
+    "coordinates": [5.7326, 58.8524],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
+    "name": "Matsentralen Sør",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Barstølveien 46 A, 4636 Kristiansand",
+    "city": "Kristiansand",
+    "coordinates": [8.0182, 58.1754],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
+    "name": "Matsentralen Trøndelag",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Nordslettvegen 3, 7038 Trondheim",
+    "city": "Trondheim",
+    "coordinates": [10.4426, 63.4008],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
+    "name": "Matsentralen Vestfold og Telemark",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Hegdalveien 84, 3261 Larvik",
+    "city": "Larvik",
+    "coordinates": [10.0549, 59.0602],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
+    "name": "Fattighuset Oslo",
+    "description": "Free food & clothing distribution",
+    "organization": "Fattighuset",
+    "type": "community",
+    "address": "Grønlandsleiret 39, 0190 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.7649, 59.9103],
+    "source": "https://fhio.no/utdeling/"
+  },
+  {
+    "name": "Frelsesarmeen Trondheim Korps",
+    "description": "Meals / community / day centre",
+    "organization": "Frelsesarmeen",
+    "type": "community",
+    "address": "Prinsens gate 2C, 7012 Trondheim",
+    "city": "Trondheim",
+    "coordinates": [10.3956, 63.4338],
+    "source": "https://frelsesarmeen.no/lokalavdeling/trondheim-korps"
+  },
+  {
+    "name": "Frelsesarmeen Kristiansand Korps",
+    "description": "Meals / community / day centre",
+    "organization": "Frelsesarmeen",
+    "type": "community",
+    "address": "Østre Strandgate 11, 4610 Kristiansand",
+    "city": "Kristiansand",
+    "coordinates": [8.0021, 58.1454],
+    "source": "https://frelsesarmeen.no/lokalavdeling/kristiansand-korps"
+  },
+  {
+    "name": "Frelsesarmeen Drammen Korps",
+    "description": "Meals / community / day centre",
+    "organization": "Frelsesarmeen",
+    "type": "community",
+    "address": "Thornegata 2, 3015 Drammen",
+    "city": "Drammen",
+    "coordinates": [7.7435, 59.7439],
+    "source": "https://frelsesarmeen.no/lokalavdeling/drammen-korps"
+  },
+  {
+    "name": "Frelsesarmeen Stavanger Korps",
+    "description": "Meals / community / day centre",
+    "organization": "Frelsesarmeen",
+    "type": "community",
+    "address": "Kongsgata 50, 4005 Stavanger",
+    "city": "Stavanger",
+    "coordinates": [5.7331, 58.969],
+    "source": "https://frelsesarmeen.no/lokalavdeling/stavanger-korps"
+  },
+  {
+    "name": "Frelsesarmeen Oslo (HQ)",
+    "description": "National HQ / info point",
+    "organization": "Frelsesarmeen",
+    "type": "community",
+    "address": "Ensjøveien 23, 0661 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.7961, 59.9125],
+    "source": "https://frelsesarmeen.no"
   }
 ]
