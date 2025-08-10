@@ -110,26 +110,6 @@
     "source": "https://kirkensbymisjon.no/kontakt/"
   },
   {
-    "name": "Matsentralen Vestland",
-    "description": "Food redistribution (NGOs only)",
-    "organization": "Matsentralen",
-    "type": "foodbank",
-    "address": "Toppemyr 7, 5136 Mjølkeråen",
-    "city": "Vestland (Bergen region)",
-    "coordinates": [5.3259, 60.3943],
-    "source": "https://www.matsentralen.no/kontakt"
-  },
-  {
-    "name": "Robin Hood Huset",
-    "description": "Free meals & social support",
-    "organization": "Stiftelsen Robin Hood Huset",
-    "type": "community",
-    "address": "Magnus Barfots gate 22, 5015 Bergen",
-    "city": "Bergen",
-    "coordinates": [5.3177, 60.3898],
-    "source": "https://www.robinhoodhuset.no"
-  },
-  {
     "name": "Matsentralen Innlandet",
     "description": "Food redistribution (NGOs only)",
     "organization": "Matsentralen",
@@ -200,6 +180,16 @@
     "source": "https://www.matsentralen.no/finn-matsentralen"
   },
   {
+    "name": "Matsentralen Vestland",
+    "description": "Food redistribution (NGOs only)",
+    "organization": "Matsentralen",
+    "type": "foodbank",
+    "address": "Toppemyr 7, 5136 Mjølkeråen",
+    "city": "Mjølkeråen",
+    "coordinates": [5.2826, 60.4893],
+    "source": "https://www.matsentralen.no/finn-matsentralen"
+  },
+  {
     "name": "Fattighuset Oslo",
     "description": "Free food & clothing distribution",
     "organization": "Fattighuset",
@@ -208,6 +198,16 @@
     "city": "Oslo",
     "coordinates": [10.7649, 59.9103],
     "source": "https://fhio.no/utdeling/"
+  },
+  {
+    "name": "Robin Hood Huset",
+    "description": "Free meals & social support",
+    "organization": "Stiftelsen Robin Hood Huset",
+    "type": "community",
+    "address": "Magnus Barfots gate 22, 5015 Bergen",
+    "city": "Bergen",
+    "coordinates": [5.3177, 60.3898],
+    "source": "https://www.robinhoodhuset.no"
   },
   {
     "name": "Frelsesarmeen Trondheim Korps",
@@ -258,5 +258,105 @@
     "city": "Oslo",
     "coordinates": [10.7961, 59.9125],
     "source": "https://frelsesarmeen.no"
+  },
+  {
+    "name": "Oslo Røde Kors",
+    "description": "Local association / info point",
+    "organization": "Røde Kors",
+    "type": "community",
+    "address": "Hausmanns gate 23, 0182 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.7526, 59.9161],
+    "source": "https://www.rodekors.no/en/lokalforeninger/oslo/english-pages/"
+  },
+  {
+    "name": "Bergen Røde Kors",
+    "description": "Local association / administration",
+    "organization": "Røde Kors",
+    "type": "community",
+    "address": "Sandviksbodene 66, 5035 Bergen",
+    "city": "Bergen",
+    "coordinates": [5.3272, 60.4096],
+    "source": "https://www.rodekors.no/lokalforeninger/hordaland/bergen/kontakt-oss/"
+  },
+  {
+    "name": "Trondheim Røde Kors",
+    "description": "Local association / info point",
+    "organization": "Røde Kors",
+    "type": "community",
+    "address": "Nardovegen 4B, 7032 Trondheim",
+    "city": "Trondheim",
+    "coordinates": [10.436, 63.4147],
+    "source": "https://www.rodekors.no/lokalforeninger/trondelag/trondheim/kontakt-oss/"
+  },
+  {
+    "name": "Kristiansand Røde Kors",
+    "description": "Local association / info point",
+    "organization": "Røde Kors",
+    "type": "community",
+    "address": "Vesterveien 6, 4616 Kristiansand S",
+    "city": "Kristiansand",
+    "coordinates": [7.988, 58.1464],
+    "source": "https://www.rodekors.no/lokalforeninger/agder/kristiansand/om-kristiansand-rode-kors/kontakt-oss/"
+  },
+  {
+    "name": "Vår Frue – åpen kirke",
+    "description": "Warm space / open church",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Kongens gate 5, 7011 Trondheim",
+    "city": "Trondheim",
+    "coordinates": [10.3951, 63.4305],
+    "source": "https://kirkensbymisjon.no/tilbud-var-frue-apen-kirke/kontaktinformasjon/"
+  },
+  {
+    "name": "Møtestedet, Oslo",
+    "description": "Low-threshold café & day centre",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Tollbugata 3, 0152 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.7472798, 59.9097624],
+    "source": "https://kirkensbymisjon.no/tilbud-motestedet/kontaktinformasjon/"
+  },
+  {
+    "name": "Helsesenteret for papirløse migranter, Oslo",
+    "description": "Free clinic for undocumented migrants",
+    "organization": "Kirkens Bymisjon",
+    "type": "health",
+    "address": "Herslebs gate 43, 0578 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.763, 59.9193],
+    "source": "https://kirkensbymisjon.no/tilbud-helsesenteret-for-papirlose-migranter/kontaktinformasjon/"
+  },
+  {
+    "name": "Helsesenteret for papirløse migranter, Bergen",
+    "description": "Free clinic for undocumented migrants",
+    "organization": "Kirkens Bymisjon",
+    "type": "health",
+    "address": "Kong Oscars gate 56, 5017 Bergen",
+    "city": "Bergen",
+    "coordinates": [5.3287, 60.3925],
+    "source": "https://kirkensbymisjon.no/tilbud-helsesenteret-for-papirlose-migranter/kontaktinformasjon/"
+  },
+  {
+    "name": "Akuttovernatting Oslo (Fattige tilreisende)",
+    "description": "Emergency overnight shelter",
+    "organization": "Kirkens Bymisjon",
+    "type": "shelter",
+    "address": "Louises gate 30, 0169 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.7353, 59.9285],
+    "source": "https://kirkensbymisjon.no/tilbud-fattige-tilreisende/kontaktinformasjon/"
+  },
+  {
+    "name": "Bymisjonssenteret, Oslo",
+    "description": "Community centre & services",
+    "organization": "Kirkens Bymisjon",
+    "type": "community",
+    "address": "Herslebs gate 43, 0578 Oslo",
+    "city": "Oslo",
+    "coordinates": [10.763, 59.9193],
+    "source": "https://kirkensbymisjon.no/tilbud-bymisjonssenteret/kontaktinformasjon/"
   }
 ]
