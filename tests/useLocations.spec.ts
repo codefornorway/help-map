@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 // Ensure alias `~~` points to project root so imports in composables work
 const rootDir = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -15,6 +15,7 @@ try {
 
 // Provide Vue's ref globally to match Nuxt auto-import behavior
 (globalThis as any).ref = ref;
+(globalThis as any).computed = computed;
 
 const { useLocations } = await import('../app/composables/useLocations.ts');
 
@@ -33,7 +34,7 @@ test('focus sets selected and calls flyTo with location coordinates', () => {
   };
 
   const { selected, focus } = useLocations();
-  const location = { name: 'Test', description: '', coordinates: [1, 2] as [number, number], type: 'food', address: '' };
+  const location = { name: 'Test', description: '', city: '', coordinates: [1, 2] as [number, number], type: 'food', address: '' };
 
   focus(location);
 
@@ -48,7 +49,7 @@ test('reset clears selected and calls flyTo with default center', () => {
   };
 
   const { selected, focus, reset } = useLocations();
-  const location = { name: 'Test', description: '', coordinates: [1, 2] as [number, number], type: 'food', address: '' };
+  const location = { name: 'Test', description: '', city: '', coordinates: [1, 2] as [number, number], type: 'food', address: '' };
 
   focus(location);
   calls.length = 0; // clear previous flyTo call
@@ -57,4 +58,12 @@ test('reset clears selected and calls flyTo with default center', () => {
 
   assert.equal(selected.value, null);
   assert.deepEqual(calls[0][0], { center: [8.49, 64.63], zoom: 4.38 });
+});
+
+test('filters by query and type', () => {
+  const { locations, searchQuery, filterType } = useLocations();
+  searchQuery.value = 'Bergen';
+  filterType.value = 'health';
+  assert.equal(locations.value.length, 1);
+  assert.equal(locations.value[0].name, 'Bergen Health');
 });

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Kirkens Bymisjon",
+    "description": "Community services and support across Norway",
+    "website": "https://kirkensbymisjon.no"
+  },
+  {
+    "name": "Frelsesarmeen",
+    "description": "The Salvation Army in Norway providing food, shelter and community assistance",
+    "website": "https://frelsesarmeen.no"
+  },
+  {
+    "name": "Røde Kors",
+    "description": "Norwegian Red Cross offering health and emergency help",
+    "website": "https://www.rodekors.no"
+  }
+]
