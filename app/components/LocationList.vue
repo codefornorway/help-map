@@ -32,7 +32,14 @@ const { locations, selected, focus, reset, searchQuery, filterTypes, filterOrgs,
     <div v-else>
       <div class="p-4 space-y-4" role="search">
         <div>
-          <input id="search" v-model="searchQuery" type="text" placeholder="Search..." class="w-full p-2 border rounded" />
+          <input
+            id="search"
+            v-model="searchQuery"
+            type="text"
+            placeholder="Search for help..."
+            aria-label="Search for help"
+            class="w-full p-2 border rounded"
+          />
         </div>
         <fieldset>
           <legend class="block text-sm font-medium mb-1">Type</legend>

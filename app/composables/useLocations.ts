@@ -35,11 +35,22 @@ export function useLocations() {
     });
   }
 
+  function locateMe() {
+    if (!('geolocation' in navigator)) return;
+    navigator.geolocation.getCurrentPosition(pos => {
+      const { latitude, longitude } = pos.coords;
+      useMapbox('main-map', map => {
+        map?.flyTo({ center: [longitude, latitude], zoom: 12 });
+      });
+    });
+  }
+
   return {
     locations,
     selected,
     focus,
     reset,
+    locateMe,
     searchQuery,
     filterTypes,
     filterOrgs,
