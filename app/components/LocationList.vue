@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const {
-  locations,
-  selected,
-  focus,
-  reset,
-  searchQuery,
-  filterTypes,
-  filterOrgs,
-  types,
-  organizations,
-} = useLocations();
+const { locations, selected, focus, reset, searchQuery, filterTypes, filterOrgs, types, organizations } = useLocations();
 </script>
 
 <template>
@@ -19,22 +9,22 @@ const {
     </div>
 
     <div v-if="selected" class="p-4 space-y-3">
-      <button @click="reset" class="text-sm cursor-pointer text-indigo-600 hover:underline">&larr; Geri</button>
+      <button @click="reset" class="text-sm cursor-pointer text-indigo-600 hover:underline">&larr; Back</button>
       <h2 class="text-lg font-semibold">{{ selected.name }}</h2>
       <p class="text-sm text-gray-600">
-        <strong>Açıklama:</strong>
+        <strong>Description:</strong>
         {{ selected.description }}
       </p>
       <p class="text-sm text-gray-600">
-        <strong>Tür:</strong>
+        <strong>Type:</strong>
         {{ selected.type }}
       </p>
       <p class="text-sm text-gray-600">
-        <strong>Kuruluş:</strong>
+        <strong>Organization:</strong>
         {{ selected.organization }}
       </p>
       <p class="text-sm text-gray-600">
-        <strong>Adres:</strong>
+        <strong>Address:</strong>
         {{ selected.address }}
       </p>
     </div>
@@ -42,47 +32,22 @@ const {
     <div v-else>
       <div class="p-4 space-y-4" role="search">
         <div>
-          <label for="search" class="block text-sm font-medium">Ara</label>
-          <input
-            id="search"
-            v-model="searchQuery"
-            type="text"
-            placeholder="Ara..."
-            class="w-full p-2 border rounded"
-          />
+          <input id="search" v-model="searchQuery" type="text" placeholder="Search..." class="w-full p-2 border rounded" />
         </div>
         <fieldset>
-          <legend class="block text-sm font-medium mb-1">Tür</legend>
+          <legend class="block text-sm font-medium mb-1">Type</legend>
           <div class="flex flex-wrap gap-2">
-            <label
-              v-for="type in types"
-              :key="type"
-              class="inline-flex items-center gap-1 text-sm"
-            >
-              <input
-                type="checkbox"
-                :value="type"
-                v-model="filterTypes"
-                class="w-4 h-4"
-              />
+            <label v-for="type in types" :key="type" class="inline-flex items-center gap-1 text-sm">
+              <input type="checkbox" :value="type" v-model="filterTypes" class="w-4 h-4" />
               {{ type.charAt(0).toUpperCase() + type.slice(1) }}
             </label>
           </div>
         </fieldset>
         <fieldset>
-          <legend class="block text-sm font-medium mb-1">Kuruluş</legend>
+          <legend class="block text-sm font-medium mb-1">Organization</legend>
           <div class="flex flex-wrap gap-2">
-            <label
-              v-for="org in organizations"
-              :key="org"
-              class="inline-flex items-center gap-1 text-sm"
-            >
-              <input
-                type="checkbox"
-                :value="org"
-                v-model="filterOrgs"
-                class="w-4 h-4"
-              />
+            <label v-for="org in organizations" :key="org" class="inline-flex items-center gap-1 text-sm">
+              <input type="checkbox" :value="org" v-model="filterOrgs" class="w-4 h-4" />
               {{ org }}
             </label>
           </div>
@@ -93,8 +58,7 @@ const {
           v-for="location in locations"
           :key="location.name"
           @click="focus(location)"
-          class="p-4 cursor-pointer border-b border-black/10 hover:bg-neutral-100 transition space-y-1"
-        >
+          class="p-4 cursor-pointer border-b border-black/10 hover:bg-neutral-100 transition space-y-1">
           <div>
             <h3 class="text-base font-semibold text-gray-800">{{ location.name }}</h3>
             <p class="text-sm text-gray-500">{{ location.address }}</p>

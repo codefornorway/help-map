@@ -1,18 +1,10 @@
 export interface Location {
   name: string;
   description: string;
-  city: string;
-  coordinates: [number, number];
-  /**
-   * Category of location. Historically only "food", "clothing" and "shelter"
-   * were allowed, but the dataset now includes many more categories (e.g.
-   * community, youth, mental health).  Using a narrow union here caused
-   * TypeScript to reject valid entries from `data/locations.json`, preventing
-   * the application from compiling when new categories were added.  Allow any
-   * string to ensure the type stays in sync with the data source.
-   */
+  organization: string;
   type: string;
   address: string;
-  organization: string;
+  city: string;
+  coordinates: [number, number];
+  source: string;
 }
-

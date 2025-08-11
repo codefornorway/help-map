@@ -8,23 +8,15 @@ export function useLocations() {
   const filterTypes = ref<string[]>([]);
   const filterOrgs = ref<string[]>([]);
 
-  const types = computed(() =>
-    Array.from(new Set(allLocations.map(l => l.type))).sort()
-  );
-  const organizations = computed(() =>
-    Array.from(new Set(allLocations.map(l => l.organization))).sort()
-  );
+  const types = computed(() => Array.from(new Set(allLocations.map(l => l.type))).sort());
+  const organizations = computed(() => Array.from(new Set(allLocations.map(l => l.organization))).sort());
 
   const locations = computed(() =>
     allLocations.filter(l => {
       const query = searchQuery.value.toLowerCase();
-      const matchesQuery = !query ||
-        [l.name, l.city, l.address, l.description]
-          .some(v => v.toLowerCase().includes(query));
-      const matchesType =
-        filterTypes.value.length === 0 || filterTypes.value.includes(l.type);
-      const matchesOrg =
-        filterOrgs.value.length === 0 || filterOrgs.value.includes(l.organization);
+      const matchesQuery = !query || [l.name, l.city, l.address, l.description].some(v => v.toLowerCase().includes(query));
+      const matchesType = filterTypes.value.length === 0 || filterTypes.value.includes(l.type);
+      const matchesOrg = filterOrgs.value.length === 0 || filterOrgs.value.includes(l.organization);
       return matchesQuery && matchesType && matchesOrg;
     })
   );
