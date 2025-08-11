@@ -5,8 +5,8 @@ export function useLocations() {
   const allLocations = locationsData as Location[];
   const selected = ref<Location | null>(null);
   const searchQuery = ref('');
-  const filterType = ref('');
-  const filterOrg = ref('');
+  const filterTypes = ref<string[]>([]);
+  const filterOrgs = ref<string[]>([]);
 
   const types = computed(() =>
     Array.from(new Set(allLocations.map(l => l.type))).sort()
@@ -21,8 +21,10 @@ export function useLocations() {
       const matchesQuery = !query ||
         [l.name, l.city, l.address, l.description]
           .some(v => v.toLowerCase().includes(query));
-      const matchesType = !filterType.value || l.type === filterType.value;
-      const matchesOrg = !filterOrg.value || l.organization === filterOrg.value;
+      const matchesType =
+        filterTypes.value.length === 0 || filterTypes.value.includes(l.type);
+      const matchesOrg =
+        filterOrgs.value.length === 0 || filterOrgs.value.includes(l.organization);
       return matchesQuery && matchesType && matchesOrg;
     })
   );
@@ -41,5 +43,15 @@ export function useLocations() {
     });
   }
 
-  return { locations, selected, focus, reset, searchQuery, filterType, filterOrg, types, organizations };
+  return {
+    locations,
+    selected,
+    focus,
+    reset,
+    searchQuery,
+    filterTypes,
+    filterOrgs,
+    types,
+    organizations,
+  };
 }

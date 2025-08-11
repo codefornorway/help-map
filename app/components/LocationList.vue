@@ -1,18 +1,15 @@
 <script setup lang="ts">
-const { locations, selected, focus, reset, searchQuery, filterType, filterOrg, types, organizations } = useLocations();
-
-const typeOptions = computed(() => [
-  { value: '', label: 'Tümü' },
-  ...types.value.map(t => ({
-    value: t,
-    label: t.charAt(0).toUpperCase() + t.slice(1)
-  }))
-]);
-
-const organizationOptions = computed(() => [
-  { value: '', label: 'Tümü' },
-  ...organizations.value.map(o => ({ value: o, label: o }))
-]);
+const {
+  locations,
+  selected,
+  focus,
+  reset,
+  searchQuery,
+  filterTypes,
+  filterOrgs,
+  types,
+  organizations,
+} = useLocations();
 </script>
 
 <template>
@@ -43,35 +40,53 @@ const organizationOptions = computed(() => [
     </div>
 
     <div v-else>
-      <div class="p-4 flex flex-col gap-2 sm:flex-row" role="search">
-        <label for="search" class="sr-only">Ara</label>
-        <input
-          id="search"
-          v-model="searchQuery"
-          type="text"
-          placeholder="Ara..."
-          class="w-full p-2 border rounded flex-1"
-        />
-        <label for="type-filter" class="sr-only">Tür filtresi</label>
-        <select
-          id="type-filter"
-          v-model="filterType"
-          class="w-full p-2 border rounded flex-1"
-        >
-          <option v-for="option in typeOptions" :key="option.value" :value="option.value">
-            {{ option.label }}
-          </option>
-        </select>
-        <label for="org-filter" class="sr-only">Kuruluş filtresi</label>
-        <select
-          id="org-filter"
-          v-model="filterOrg"
-          class="w-full p-2 border rounded flex-1"
-        >
-          <option v-for="option in organizationOptions" :key="option.value" :value="option.value">
-            {{ option.label }}
-          </option>
-        </select>
+      <div class="p-4 space-y-4" role="search">
+        <div>
+          <label for="search" class="block text-sm font-medium">Ara</label>
+          <input
+            id="search"
+            v-model="searchQuery"
+            type="text"
+            placeholder="Ara..."
+            class="w-full p-2 border rounded"
+          />
+        </div>
+        <fieldset>
+          <legend class="block text-sm font-medium mb-1">Tür</legend>
+          <div class="flex flex-wrap gap-2">
+            <label
+              v-for="type in types"
+              :key="type"
+              class="inline-flex items-center gap-1 text-sm"
+            >
+              <input
+                type="checkbox"
+                :value="type"
+                v-model="filterTypes"
+                class="w-4 h-4"
+              />
+              {{ type.charAt(0).toUpperCase() + type.slice(1) }}
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend class="block text-sm font-medium mb-1">Kuruluş</legend>
+          <div class="flex flex-wrap gap-2">
+            <label
+              v-for="org in organizations"
+              :key="org"
+              class="inline-flex items-center gap-1 text-sm"
+            >
+              <input
+                type="checkbox"
+                :value="org"
+                v-model="filterOrgs"
+                class="w-4 h-4"
+              />
+              {{ org }}
+            </label>
+          </div>
+        </fieldset>
       </div>
       <ul class="divide-y divide-gray-100">
         <li

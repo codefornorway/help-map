@@ -61,12 +61,19 @@ test('reset clears selected and calls flyTo with default center', () => {
 });
 
 test('filters by query, type, and organization', () => {
-  const { locations, searchQuery, filterType, filterOrg, types, organizations } = useLocations();
+  const { locations, searchQuery, filterTypes, filterOrgs, types, organizations } = useLocations();
   assert.deepEqual(types.value.sort(), ['foodbank', 'health']);
   assert.deepEqual(organizations.value.sort(), ['OrgA', 'OrgB']);
   searchQuery.value = 'Bergen';
-  filterType.value = 'health';
-  filterOrg.value = 'OrgB';
+  filterTypes.value = ['health'];
+  filterOrgs.value = ['OrgB'];
   assert.equal(locations.value.length, 1);
   assert.equal(locations.value[0].name, 'Bergen Health');
+});
+
+test('allows selecting multiple types and organizations', () => {
+  const { locations, filterTypes, filterOrgs } = useLocations();
+  filterTypes.value = ['foodbank', 'health'];
+  filterOrgs.value = ['OrgA', 'OrgB'];
+  assert.equal(locations.value.length, 2);
 });
