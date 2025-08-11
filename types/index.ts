@@ -1,6 +1,7 @@
 export interface Location {
   name: string;
   description: string;
+  city: string;
   coordinates: [number, number];
   /**
    * Category of location. Historically only "food", "clothing" and "shelter"
@@ -12,4 +13,6 @@ export interface Location {
    */
   type: string;
   address: string;
+  organization: string;
 }
+
