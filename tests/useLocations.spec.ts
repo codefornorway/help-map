@@ -2,7 +2,14 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { ref, computed } from 'vue';
+
+function ref<T>(value: T) {
+  return { value } as { value: T };
+}
+
+function computed<T>(getter: () => T) {
+  return { get value() { return getter(); } } as { readonly value: T };
+}
 
 // Ensure alias `~~` points to project root so imports in composables work
 const rootDir = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -10,6 +17,7 @@ const aliasDir = path.join(rootDir, 'node_modules', '~~');
 try {
   fs.statSync(aliasDir);
 } catch {
+  fs.mkdirSync(path.dirname(aliasDir), { recursive: true });
   fs.symlinkSync(rootDir, aliasDir, 'dir');
 }
 
