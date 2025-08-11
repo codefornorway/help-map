@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const { locations, selected, focus, reset, searchQuery, filterTypes, filterOrgs, types, organizations } = useLocations();
+
+const googleMapsLink = computed(() =>
+  selected.value
+    ? `https://www.google.com/maps/dir/?api=1&destination=${selected.value.coordinates[1]},${selected.value.coordinates[0]}`
+    : '#'
+);
 </script>
 
 <template>
@@ -27,6 +33,14 @@ const { locations, selected, focus, reset, searchQuery, filterTypes, filterOrgs,
         <strong>Address:</strong>
         {{ selected.address }}
       </p>
+      <a
+        :href="googleMapsLink"
+        target="_blank"
+        rel="noopener"
+        class="text-sm text-indigo-600 hover:underline"
+      >
+        Open in Google Maps
+      </a>
     </div>
 
     <div v-else>
