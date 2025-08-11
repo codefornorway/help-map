@@ -1,18 +1,18 @@
 import type { Location } from '~~/types';
 import locationsData from '~~/data/locations.json';
 
-const allLocations = locationsData as Location[];
+const allLocations = useState<Location[]>('allLocations', () => locationsData as Location[]);
 
-const selected = ref<Location | null>(null);
-const searchQuery = ref('');
-const filterTypes = ref<string[]>([]);
-const filterOrgs = ref<string[]>([]);
+const selected = useState<Location | null>('selectedLocation', () => null);
+const searchQuery = useState('searchQuery', () => '');
+const filterTypes = useState<string[]>('filterTypes', () => []);
+const filterOrgs = useState<string[]>('filterOrgs', () => []);
 
-const types = computed(() => Array.from(new Set(allLocations.map(l => l.type))).sort());
-const organizations = computed(() => Array.from(new Set(allLocations.map(l => l.organization))).sort());
+const types = computed(() => Array.from(new Set(allLocations.value.map(l => l.type))).sort());
+const organizations = computed(() => Array.from(new Set(allLocations.value.map(l => l.organization))).sort());
 
 const locations = computed(() =>
-  allLocations.filter(l => {
+  allLocations.value.filter(l => {
     const query = searchQuery.value.toLowerCase();
     const matchesQuery = !query || [l.name, l.city, l.address, l.description].some(v => v.toLowerCase().includes(query));
     const matchesType = filterTypes.value.length === 0 || filterTypes.value.includes(l.type);

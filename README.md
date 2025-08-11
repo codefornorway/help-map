@@ -6,18 +6,20 @@
 
 Help Map is a web application developed by Code for Norway to assist individuals in need across Norway, such as the homeless, refugees, or those facing economic hardships. The platform enables users to locate places offering free essential services like food, clothing, and shelter on an interactive map. Users can also contribute by adding and editing locations to ensure the information remains up-to-date.
 
-This project is built with [Nuxt 3](https://nuxt.com/), uses [Mapbox](https://www.mapbox.com/) for interactive mapping, and integrates [Supabase](https://supabase.com/) for backend services and data management.
+This project is built with [Nuxt 4](https://nuxt.com/), uses [Mapbox](https://www.mapbox.com/) for interactive mapping, and integrates [Supabase](https://supabase.com/) for backend services and data management.
 
 ## Features
 
 - **Interactive Map**: Visualize locations providing free services using Mapbox.
 - **User Contributions**: Users can add and edit locations to keep the map current.
 - **Real-time Data**: Powered by Supabase for efficient data storage and retrieval.
-- **Responsive Design**: Built with Nuxt 3 for a seamless experience across devices.
+- **Responsive Design**: Built with Nuxt 4 and Tailwind CSS for a seamless experience across devices.
+- **Composable State Management**: Shared state handled via Nuxt's `useState` API.
 
 ## Tech Stack
 
-- **Frontend**: Nuxt 3 (Vue.js-based framework)
+- **Frontend**: Nuxt 4 (Vue 3-based framework)
+- **State Management**: Nuxt `useState` composables
 - **Mapping**: Mapbox for interactive and dynamic maps
 - **Backend**: Supabase for authentication, database, and real-time updates
 

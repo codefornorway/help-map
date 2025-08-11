@@ -16,6 +16,10 @@ try {
 // Provide Vue's ref globally to match Nuxt auto-import behavior
 (globalThis as any).ref = ref;
 (globalThis as any).computed = computed;
+(globalThis as any).useState = (_key: string, init: any) => {
+  const value = typeof init === 'function' ? init() : init;
+  return ref(value);
+};
 
 const { useLocations } = await import('../app/composables/useLocations.ts');
 
