@@ -15,7 +15,12 @@ function iconFor(type: string) {
 
 <template>
   <div class="relative w-full h-full">
-    <button @click="locateMe" class="absolute top-2 right-2 z-10 bg-white border border-gray-300 rounded px-3 py-1 text-sm shadow">Locate Me</button>
+    <button
+      @click="locateMe"
+      class="absolute top-2 right-2 z-10 bg-white border border-gray-300 rounded-md px-3 py-1 text-sm shadow hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    >
+      Locate Me
+    </button>
     <MapboxMap
       map-id="main-map"
       class="absolute inset-0 w-full h-full"
