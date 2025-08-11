@@ -1,15 +1,17 @@
 <script setup lang="ts">
 const { locations, locateMe, focus } = useLocations();
 
-const iconMap: Record<string, string> = {
-  health: '🩺',
-  foodbank: '🍲',
-  shelter: '🏠',
-  community: '🤝',
+const logoMap: Record<string, string> = {
+  'Kirkens Bymisjon': '/logos/kirkens-bymisjon.svg',
+  Matsentralen: '/logos/matsentralen.svg',
+  Frelsesarmeen: '/logos/frelsesarmeen.svg',
+  Fattighuset: '/logos/fattighuset.svg',
+  'Røde Kors': '/logos/rode-kors.svg',
+  'Stiftelsen Robin Hood Huset': '/logos/robin-hood-huset.svg',
 };
 
-function iconFor(type: string) {
-  return iconMap[type] ?? '📍';
+function logoFor(org: string) {
+  return logoMap[org] ?? '/logos/default.svg';
 }
 </script>
 
@@ -31,8 +33,8 @@ function iconFor(type: string) {
       }">
       <MapboxDefaultMarker v-for="(location, index) in locations" :key="location.name" :marker-id="`marker-${index}`" :lnglat="location.coordinates">
         <template #marker>
-          <button @click="focus(location)" class="text-4xl leading-none cursor-pointer" :aria-label="`Select ${location.name}`">
-            {{ iconFor(location.type) }}
+          <button @click="focus(location)" class="cursor-pointer" :aria-label="`Select ${location.name}`">
+            <img :src="logoFor(location.organization)" :alt="location.organization" class="h-8 w-8 object-contain" />
           </button>
         </template>
       </MapboxDefaultMarker>
