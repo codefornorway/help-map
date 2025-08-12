@@ -30,7 +30,7 @@ function goBack() {
     <!-- Toggle button for mobile -->
     <button
       @click="toggleList"
-      class="absolute top-4 left-4 z-30 bg-white shadow-md px-4 py-2 rounded-md lg:hidden"
+      class="absolute top-4 left-4 z-30 bg-white/90 backdrop-blur shadow-md px-4 py-2 rounded-md lg:hidden"
       :aria-expanded="isListOpen"
       aria-controls="location-panel"
     >
@@ -40,7 +40,7 @@ function goBack() {
     <!-- Overlay for mobile when panels are open -->
     <div
       v-if="isListOpen || isMenuOpen"
-      class="fixed inset-0 bg-black/30 z-10 lg:hidden"
+      class="fixed inset-0 bg-black/40 z-10 lg:hidden"
       @click="() => { if (isMenuOpen) closeMenu(); if (isListOpen) toggleList(); }"
     />
 
@@ -68,49 +68,76 @@ function goBack() {
         isMenuOpen ? 'translate-x-0' : 'translate-x-full'
       ]"
     >
-      <div v-if="menuView === 'menu'" class="p-4 space-y-4">
-        <button class="w-full text-left" @click="showView('feedback')">Geri bildirim</button>
-        <button class="w-full text-left" @click="showView('contact')">İletişim</button>
-        <button class="w-full text-left" @click="showView('edit')">Adres düzenleme</button>
-        <button class="w-full text-left" @click="showView('add')">Adres ekleme</button>
-        <a class="block" href="https://github.com/codefornorway/help-map" target="_blank">GitHub sayfamız</a>
-        <button class="w-full text-left" @click="showView('volunteer')">Gönüllü ol</button>
-        <button class="w-full text-left" @click="showView('donor')">Bağışçı ol</button>
+      <div v-if="menuView === 'menu'" class="p-6">
+        <h2 class="text-lg font-semibold mb-4">Menu</h2>
+        <nav class="space-y-2">
+          <button class="w-full flex items-center gap-2 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" @click="showView('feedback')">Feedback</button>
+          <button class="w-full flex items-center gap-2 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" @click="showView('contact')">Contact</button>
+          <button class="w-full flex items-center gap-2 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" @click="showView('edit')">Edit Address</button>
+          <button class="w-full flex items-center gap-2 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" @click="showView('add')">Add Address</button>
+          <a class="block px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" href="https://github.com/codefornorway/help-map" target="_blank">GitHub</a>
+          <button class="w-full flex items-center gap-2 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" @click="showView('volunteer')">Become a Volunteer</button>
+          <button class="w-full flex items-center gap-2 px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100" @click="showView('donor')">Become a Donor</button>
+        </nav>
       </div>
-      <div v-else-if="menuView === 'edit'" class="p-4 space-y-4">
-        <button @click="goBack" class="mb-4">Geri</button>
-        <form class="space-y-2">
-          <input type="text" placeholder="Adres adı" class="w-full border p-2" />
-          <input type="text" placeholder="Adres" class="w-full border p-2" />
-          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Kaydet</button>
+
+      <div v-else-if="menuView === 'edit'" class="p-6 space-y-4">
+        <button @click="goBack" class="flex items-center text-sm text-gray-500 hover:text-gray-700">
+          ← Back
+        </button>
+        <h2 class="text-lg font-semibold">Edit Address</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Address Name" class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" />
+          <input type="text" placeholder="Address" class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" />
+          <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md">Save</button>
         </form>
       </div>
-      <div v-else-if="menuView === 'add'" class="p-4 space-y-4">
-        <button @click="goBack" class="mb-4">Geri</button>
-        <form class="space-y-2">
-          <input type="text" placeholder="Adres adı" class="w-full border p-2" />
-          <input type="text" placeholder="Adres" class="w-full border p-2" />
-          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Ekle</button>
+
+      <div v-else-if="menuView === 'add'" class="p-6 space-y-4">
+        <button @click="goBack" class="flex items-center text-sm text-gray-500 hover:text-gray-700">
+          ← Back
+        </button>
+        <h2 class="text-lg font-semibold">Add Address</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Address Name" class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" />
+          <input type="text" placeholder="Address" class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" />
+          <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md">Add</button>
         </form>
       </div>
-      <div v-else-if="menuView === 'feedback'" class="p-4 space-y-4">
-        <button @click="goBack" class="mb-4">Geri</button>
-        <form class="space-y-2">
-          <textarea placeholder="Geri bildirim" class="w-full border p-2" rows="4"></textarea>
-          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Gönder</button>
+
+      <div v-else-if="menuView === 'feedback'" class="p-6 space-y-4">
+        <button @click="goBack" class="flex items-center text-sm text-gray-500 hover:text-gray-700">
+          ← Back
+        </button>
+        <h2 class="text-lg font-semibold">Feedback</h2>
+        <form class="space-y-4">
+          <textarea placeholder="Your feedback" class="w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500" rows="4"></textarea>
+          <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md">Send</button>
         </form>
       </div>
-      <div v-else-if="menuView === 'contact'" class="p-4 space-y-4">
-        <button @click="goBack" class="mb-4">Geri</button>
-        <p>İletişim için <NuxtLink class="text-blue-500 underline" to="/contact">/contact</NuxtLink></p>
+
+      <div v-else-if="menuView === 'contact'" class="p-6 space-y-4">
+        <button @click="goBack" class="flex items-center text-sm text-gray-500 hover:text-gray-700">
+          ← Back
+        </button>
+        <h2 class="text-lg font-semibold">Contact</h2>
+        <p>Reach us via <NuxtLink class="text-indigo-600 hover:underline" to="/contact">our contact page</NuxtLink>.</p>
       </div>
-      <div v-else-if="menuView === 'volunteer'" class="p-4 space-y-4">
-        <button @click="goBack" class="mb-4">Geri</button>
-        <p>Gönüllü olmak için <a href="https://github.com/codefornorway/help-map" target="_blank" class="text-blue-500 underline">GitHub sayfamızı</a> ziyaret edin.</p>
+
+      <div v-else-if="menuView === 'volunteer'" class="p-6 space-y-4">
+        <button @click="goBack" class="flex items-center text-sm text-gray-500 hover:text-gray-700">
+          ← Back
+        </button>
+        <h2 class="text-lg font-semibold">Become a Volunteer</h2>
+        <p>Visit <a href="https://github.com/codefornorway/help-map" target="_blank" class="text-indigo-600 hover:underline">our GitHub</a> to contribute.</p>
       </div>
-      <div v-else-if="menuView === 'donor'" class="p-4 space-y-4">
-        <button @click="goBack" class="mb-4">Geri</button>
-        <p>Bağışçı olmak için <NuxtLink to="/contact" class="text-blue-500 underline">bizimle iletişime geçin</NuxtLink>.</p>
+
+      <div v-else-if="menuView === 'donor'" class="p-6 space-y-4">
+        <button @click="goBack" class="flex items-center text-sm text-gray-500 hover:text-gray-700">
+          ← Back
+        </button>
+        <h2 class="text-lg font-semibold">Become a Donor</h2>
+        <p>Contact us via <NuxtLink to="/contact" class="text-indigo-600 hover:underline">our contact page</NuxtLink>.</p>
       </div>
     </aside>
   </div>
