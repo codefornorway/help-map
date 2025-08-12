@@ -46,7 +46,15 @@ test('focus sets selected and calls flyTo with location coordinates', () => {
   };
 
   const { selected, focus } = useLocations();
-  const location = { name: 'Test', description: '', city: '', coordinates: [1, 2] as [number, number], type: 'food', address: '', organization: '' };
+  const location = {
+    name: 'Test',
+    description: '',
+    city: '',
+    coordinates: [1, 2] as [number, number],
+    type: 'foodbank',
+    address: '',
+    organization: '',
+  };
 
   focus(location);
 
@@ -61,7 +69,15 @@ test('reset clears selected and calls flyTo with default center', () => {
   };
 
   const { selected, focus, reset } = useLocations();
-  const location = { name: 'Test', description: '', city: '', coordinates: [1, 2] as [number, number], type: 'food', address: '', organization: '' };
+  const location = {
+    name: 'Test',
+    description: '',
+    city: '',
+    coordinates: [1, 2] as [number, number],
+    type: 'foodbank',
+    address: '',
+    organization: '',
+  };
 
   focus(location);
   calls.length = 0; // clear previous flyTo call

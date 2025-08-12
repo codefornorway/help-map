@@ -1,17 +1,8 @@
 <script setup lang="ts">
+import { iconFor } from '~~/utils/location-icons';
+
 const { locations, locateMe, focus } = useLocations();
 const emit = defineEmits(['open-menu']);
-
-const iconMap: Record<string, string> = {
-  health: '/icons/health.svg',
-  foodbank: '/icons/food.svg',
-  shelter: '/icons/shelter.svg',
-  community: '/icons/community.svg',
-};
-
-function iconFor(type: string) {
-  return iconMap[type] ?? '/icons/community.svg';
-}
 </script>
 
 <template>
