@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { locations, locateMe, focus } = useLocations();
+const emit = defineEmits(['open-menu']);
 
 const iconMap: Record<string, string> = {
   health: '/icons/health.svg',
@@ -15,11 +16,17 @@ function iconFor(type: string) {
 
 <template>
   <div class="relative w-full h-full">
-    <button
-      @click="locateMe"
-      class="absolute top-2 right-2 z-10 bg-white border border-gray-300 rounded-md px-3 py-1 text-sm shadow hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      Locate Me
-    </button>
+    <div class="absolute top-4 right-4 z-50 flex gap-2 transition-transform duration-300">
+      <button @click="locateMe" class="px-4 py-2 bg-white/90 backdrop-blur rounded-md text-sm shadow hover:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        Locate Me
+      </button>
+      <button
+        @click="emit('open-menu')"
+        class="px-4 py-2 bg-white/90 backdrop-blur rounded-md text-sm shadow hover:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        aria-label="Open menu">
+        ☰
+      </button>
+    </div>
     <MapboxMap
       map-id="main-map"
       class="absolute inset-0 w-full h-full"

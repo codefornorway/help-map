@@ -92,6 +92,8 @@ We welcome contributions from the community! To contribute:
 
 Please ensure your code follows the project's coding standards and includes appropriate tests.
 
+You're also welcome to volunteer with the project or support it as a donor. Visit our [GitHub repository](https://github.com/codefornorway/help-map) or reach out to learn more.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
