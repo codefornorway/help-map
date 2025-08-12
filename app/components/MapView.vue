@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { locations, locateMe, focus } = useLocations();
-const emit = defineEmits(['open-menu']);
+const emit = defineEmits(['open-menu', 'close-menu']);
 const props = defineProps<{ menuOpen: boolean }>();
 
 const iconMap: Record<string, string> = {
@@ -27,10 +27,11 @@ function iconFor(type: string) {
         Locate Me
       </button>
       <button
-        @click="emit('open-menu')"
+        @click="props.menuOpen ? emit('close-menu') : emit('open-menu')"
         class="bg-white border border-gray-300 rounded-md px-3 py-1 text-sm shadow hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        aria-label="Open menu">
-        ☰
+        :aria-label="props.menuOpen ? 'Close menu' : 'Open menu'"
+      >
+        {{ props.menuOpen ? '✕' : '☰' }}
       </button>
     </div>
     <MapboxMap
