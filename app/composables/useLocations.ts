@@ -1,4 +1,4 @@
-import type { Location } from '~~/types';
+import type { Location, LocationType } from '~~/types';
 import locationsData from '~~/data/locations.json';
 
 export function useLocations() {
@@ -6,10 +6,12 @@ export function useLocations() {
 
   const selected = useState<Location | null>('selectedLocation', () => null);
   const searchQuery = useState('searchQuery', () => '');
-  const filterTypes = useState<string[]>('filterTypes', () => []);
+  const filterTypes = useState<LocationType[]>('filterTypes', () => []);
   const filterOrgs = useState<string[]>('filterOrgs', () => []);
 
-  const types = computed(() => Array.from(new Set(allLocations.value.map(l => l.type))).sort());
+  const types = computed<LocationType[]>(() =>
+    Array.from(new Set(allLocations.value.map(l => l.type))).sort()
+  );
   const organizations = computed(() => Array.from(new Set(allLocations.value.map(l => l.organization))).sort());
 
   const locations = computed(() => {
