@@ -58,7 +58,7 @@ function goBack() {
 
     <!-- Map area -->
     <div class="flex-1 h-full relative">
-      <MapView @open-menu="openMenu" />
+      <MapView @open-menu="openMenu" :menu-open="isMenuOpen" />
     </div>
 
     <!-- Menu sidebar -->

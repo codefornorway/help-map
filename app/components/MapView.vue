@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { locations, locateMe, focus } = useLocations();
 const emit = defineEmits(['open-menu']);
+const props = defineProps<{ menuOpen: boolean }>();
 
 const iconMap: Record<string, string> = {
   health: '/icons/health.svg',
@@ -16,7 +17,10 @@ function iconFor(type: string) {
 
 <template>
   <div class="relative w-full h-full">
-    <div class="absolute top-2 right-2 z-10 flex space-x-2">
+    <div
+      class="absolute top-2 right-2 z-30 flex space-x-2 transition-transform duration-300"
+      :class="props.menuOpen ? '-translate-x-64' : ''"
+    >
       <button
         @click="locateMe"
         class="bg-white border border-gray-300 rounded-md px-3 py-1 text-sm shadow hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500">
