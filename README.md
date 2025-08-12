@@ -1,4 +1,4 @@
-![help-map](https://github.com/user-attachments/assets/8d539bc3-9ee4-4b20-a374-f51e88e7851f)
+<img height="100" alt="Help Map" src="https://github.com/user-attachments/assets/32b936fc-1c0e-4160-9e5a-cd1c6164e0ed" />
 
 # Help Map
 
@@ -103,3 +103,6 @@ For questions or feedback, reach out to the Code for Norway team via [GitHub Iss
 ---
 
 _Built with ❤️ by Code for Norway_
+
+![help-map](https://github.com/user-attachments/assets/8d539bc3-9ee4-4b20-a374-f51e88e7851f)
+
