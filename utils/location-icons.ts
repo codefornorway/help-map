@@ -7,6 +7,6 @@ export const locationIconMap: Record<LocationType, string> = {
   community: '/icons/community.svg',
 };
 
-export function iconFor(type: LocationType): string {
-  return locationIconMap[type] ?? locationIconMap.community;
+export function iconFor(type?: LocationType): string {
+  return (type && locationIconMap[type]) || locationIconMap.community;
 }
