@@ -14,6 +14,7 @@ export interface Location {
   data_updated: string;
   notes: string;
   organization: string;
+  organization_logo: string;
   city: string;
   type: LocationType[];
 }

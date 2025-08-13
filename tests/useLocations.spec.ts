@@ -57,6 +57,7 @@ test('focus sets selected and calls flyTo with location coordinates', () => {
     data_updated: '',
     notes: '',
     organization: '',
+    organization_logo: '',
     city: '',
     type: ['foodbank'],
   };
@@ -85,6 +86,7 @@ test('reset clears selected and calls flyTo with default center', () => {
     data_updated: '',
     notes: '',
     organization: '',
+    organization_logo: '',
     city: '',
     type: ['foodbank'],
   };

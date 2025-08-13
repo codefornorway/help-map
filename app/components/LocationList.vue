@@ -26,8 +26,13 @@ const googleMapsLink = computed(() =>
         <strong>Type:</strong>
         {{ selected.type.map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(', ') }}
       </p>
-      <p class="text-sm text-gray-600">
+      <p class="text-sm text-gray-600 flex items-center gap-2">
         <strong>Organization:</strong>
+        <img
+          :src="selected.organization_logo"
+          :alt="`${selected.organization} logo`"
+          class="h-4 w-auto"
+        />
         {{ selected.organization }}
       </p>
       <p class="text-sm text-gray-600">
