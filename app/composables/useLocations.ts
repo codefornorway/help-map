@@ -22,10 +22,14 @@ export function useLocations() {
     });
   });
 
+  function toLngLat([lat, lon]: [number, number]): [number, number] {
+    return [lon, lat];
+  }
+
   function focus(location: Location) {
     selected.value = location;
     useMapbox('main-map', map => {
-      map?.flyTo({ center: location.coordinates, zoom: 15 });
+      map?.flyTo({ center: toLngLat(location.coordinates), zoom: 15 });
     });
   }
 

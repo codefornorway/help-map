@@ -26,7 +26,7 @@ const emit = defineEmits(['open-menu']);
         zoom: 4.38,
         style: 'mapbox://styles/mapbox/streets-v11',
       }">
-      <MapboxDefaultMarker v-for="(location, index) in locations" :key="location.name" :marker-id="`marker-${index}`" :lnglat="location.coordinates">
+      <MapboxDefaultMarker v-for="(location, index) in locations" :key="location.name" :marker-id="`marker-${index}`" :lnglat="[location.coordinates[1], location.coordinates[0]]">
         <template #marker>
           <button @click="focus(location)" class="text-4xl leading-none cursor-pointer" :aria-label="`Select ${location.name}`">
             <img :src="iconFor(location.type)" :alt="location.type" class="h-11 w-11 object-contain" />

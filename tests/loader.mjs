@@ -14,8 +14,34 @@ export async function resolve(specifier, context, nextResolve) {
 export async function load(url, context, nextLoad) {
   if (url.endsWith('/data/locations.json')) {
     const sample = [
-      { name: 'Oslo Food', description: '', city: 'Oslo', coordinates: [0, 0], type: 'foodbank', address: '', organization: 'OrgA' },
-      { name: 'Bergen Health', description: '', city: 'Bergen', coordinates: [0, 0], type: 'health', address: '', organization: 'OrgB' },
+      {
+        name: 'Oslo Food',
+        description: '',
+        image: '',
+        address: '',
+        email: '',
+        source: '',
+        coordinates: [0, 0],
+        data_updated: '',
+        notes: '',
+        organization: 'OrgA',
+        city: 'Oslo',
+        type: 'foodbank',
+      },
+      {
+        name: 'Bergen Health',
+        description: '',
+        image: '',
+        address: '',
+        email: '',
+        source: '',
+        coordinates: [0, 0],
+        data_updated: '',
+        notes: '',
+        organization: 'OrgB',
+        city: 'Bergen',
+        type: 'health',
+      },
     ];
     return {
       format: 'module',

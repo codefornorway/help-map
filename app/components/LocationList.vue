@@ -3,7 +3,7 @@ const { locations, selected, focus, reset, searchQuery, filterTypes, filterOrgs,
 
 const googleMapsLink = computed(() =>
   selected.value
-    ? `https://www.google.com/maps/dir/?api=1&destination=${selected.value.coordinates[1]},${selected.value.coordinates[0]}`
+    ? `https://www.google.com/maps/dir/?api=1&destination=${selected.value.coordinates[0]},${selected.value.coordinates[1]}`
     : '#'
 );
 </script>
@@ -17,6 +17,7 @@ const googleMapsLink = computed(() =>
     <div v-if="selected" class="p-4 space-y-3">
       <button @click="reset" class="text-sm cursor-pointer text-indigo-600 hover:underline">&larr; Back</button>
       <h2 class="text-lg font-semibold">{{ selected.name }}</h2>
+      <img :src="selected.image" :alt="selected.name" class="w-full h-auto rounded" />
       <p class="text-sm text-gray-600">
         <strong>Description:</strong>
         {{ selected.description }}
@@ -33,6 +34,15 @@ const googleMapsLink = computed(() =>
         <strong>Address:</strong>
         {{ selected.address }}
       </p>
+      <p class="text-sm text-gray-600">
+        <strong>Email:</strong>
+        <a :href="`mailto:${selected.email}`" class="text-indigo-600 hover:underline">{{ selected.email }}</a>
+      </p>
+      <p class="text-sm text-gray-600">
+        <strong>Last updated:</strong>
+        {{ selected.data_updated }}
+      </p>
+      <div class="prose prose-sm" v-html="selected.notes"></div>
       <a
         :href="googleMapsLink"
         target="_blank"
@@ -40,6 +50,14 @@ const googleMapsLink = computed(() =>
         class="text-sm text-indigo-600 hover:underline"
       >
         Open in Google Maps
+      </a>
+      <a
+        :href="selected.source"
+        target="_blank"
+        rel="noopener"
+        class="block text-sm text-indigo-600 hover:underline"
+      >
+        Source
       </a>
     </div>
 
