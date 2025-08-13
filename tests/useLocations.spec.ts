@@ -59,7 +59,7 @@ test('focus sets selected and calls flyTo with location coordinates', () => {
   focus(location);
 
   assert.deepEqual(selected.value, location);
-  assert.deepEqual(calls[0][0], { center: location.coordinates, zoom: 10 });
+  assert.deepEqual(calls[0][0], { center: location.coordinates, zoom: 15 });
 });
 
 test('reset clears selected and calls flyTo with default center', () => {
