@@ -24,7 +24,7 @@ const googleMapsLink = computed(() =>
       </p>
       <p class="text-sm text-gray-600">
         <strong>Type:</strong>
-        {{ selected.type }}
+        {{ selected.type.map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(', ') }}
       </p>
       <p class="text-sm text-gray-600">
         <strong>Organization:</strong>
@@ -103,7 +103,12 @@ const googleMapsLink = computed(() =>
             <p class="text-sm text-gray-500">{{ location.address }}</p>
           </div>
           <div class="flex flex-wrap gap-1">
-            <span class="inline-block text-xs text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">{{ location.type }}</span>
+            <span
+              v-for="t in location.type"
+              :key="t"
+              class="inline-block text-xs text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded"
+              >{{ t.charAt(0).toUpperCase() + t.slice(1) }}</span
+            >
             <span class="inline-block text-xs text-green-700 bg-green-50 px-2 py-0.5 rounded">{{ location.organization }}</span>
           </div>
         </li>

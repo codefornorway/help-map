@@ -26,7 +26,7 @@ export async function load(url, context, nextLoad) {
         notes: '',
         organization: 'OrgA',
         city: 'Oslo',
-        type: 'foodbank',
+        type: ['foodbank'],
       },
       {
         name: 'Bergen Health',
@@ -40,7 +40,7 @@ export async function load(url, context, nextLoad) {
         notes: '',
         organization: 'OrgB',
         city: 'Bergen',
-        type: 'health',
+        type: ['health'],
       },
     ];
     return {

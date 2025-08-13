@@ -29,7 +29,11 @@ const emit = defineEmits(['open-menu']);
       <MapboxDefaultMarker v-for="(location, index) in locations" :key="location.name" :marker-id="`marker-${index}`" :lnglat="[location.coordinates[1], location.coordinates[0]]">
         <template #marker>
           <button @click="focus(location)" class="text-4xl leading-none cursor-pointer" :aria-label="`Select ${location.name}`">
-            <img :src="iconFor(location.type)" :alt="location.type" class="h-11 w-11 object-contain" />
+            <img
+              :src="iconFor(location.type[0])"
+              :alt="location.type.join(', ')"
+              class="h-11 w-11 object-contain"
+            />
           </button>
         </template>
       </MapboxDefaultMarker>

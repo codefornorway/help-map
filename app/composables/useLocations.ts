@@ -9,14 +9,17 @@ export function useLocations() {
   const filterTypes = useState<LocationType[]>('filterTypes', () => []);
   const filterOrgs = useState<string[]>('filterOrgs', () => []);
 
-  const types = computed<LocationType[]>(() => Array.from(new Set(allLocations.value.map(l => l.type))).sort());
+  const types = computed<LocationType[]>(() =>
+    Array.from(new Set(allLocations.value.flatMap(l => l.type))).sort()
+  );
   const organizations = computed(() => Array.from(new Set(allLocations.value.map(l => l.organization))).sort());
 
   const locations = computed(() => {
     const query = searchQuery.value.toLowerCase();
     return allLocations.value.filter(l => {
       const matchesQuery = !query || [l.name, l.city, l.address, l.description].some(v => v.toLowerCase().includes(query));
-      const matchesType = filterTypes.value.length === 0 || filterTypes.value.includes(l.type);
+      const matchesType =
+        filterTypes.value.length === 0 || l.type.some(t => filterTypes.value.includes(t));
       const matchesOrg = filterOrgs.value.length === 0 || filterOrgs.value.includes(l.organization);
       return matchesQuery && matchesType && matchesOrg;
     });
