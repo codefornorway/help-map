@@ -1,12 +1,16 @@
-export type LocationType = 'community' | 'foodbank' | 'health' | 'shelter';
+export type LocationType = string;
 
 export interface Location {
   name: string;
   description: string;
-  organization: string;
-  type: LocationType;
+  image: string;
   address: string;
-  city: string;
-  coordinates: [number, number];
+  email: string;
   source: string;
+  coordinates: [number, number];
+  data_updated: string;
+  notes: string;
+  organization: string;
+  city: string;
+  type: LocationType[];
 }

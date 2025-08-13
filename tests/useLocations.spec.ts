@@ -49,17 +49,22 @@ test('focus sets selected and calls flyTo with location coordinates', () => {
   const location = {
     name: 'Test',
     description: '',
-    city: '',
-    coordinates: [1, 2] as [number, number],
-    type: 'foodbank',
+    image: '',
     address: '',
+    email: '',
+    source: '',
+    coordinates: [1, 2] as [number, number],
+    data_updated: '',
+    notes: '',
     organization: '',
+    city: '',
+    type: ['foodbank'],
   };
 
   focus(location);
 
   assert.deepEqual(selected.value, location);
-  assert.deepEqual(calls[0][0], { center: location.coordinates, zoom: 10 });
+  assert.deepEqual(calls[0][0], { center: [location.coordinates[1], location.coordinates[0]], zoom: 15 });
 });
 
 test('reset clears selected and calls flyTo with default center', () => {
@@ -72,11 +77,16 @@ test('reset clears selected and calls flyTo with default center', () => {
   const location = {
     name: 'Test',
     description: '',
-    city: '',
-    coordinates: [1, 2] as [number, number],
-    type: 'foodbank',
+    image: '',
     address: '',
+    email: '',
+    source: '',
+    coordinates: [1, 2] as [number, number],
+    data_updated: '',
+    notes: '',
     organization: '',
+    city: '',
+    type: ['foodbank'],
   };
 
   focus(location);

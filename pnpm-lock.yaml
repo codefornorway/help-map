@@ -1866,8 +1866,8 @@ packages:
     resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
     engines: {node: '>=12.13'}
 
-  copy-file@11.0.0:
-    resolution: {integrity: sha512-mFsNh/DIANLqFt5VHZoGirdg7bK5+oTWlhnGu6tgRhzBlnEKWaPX2xrFaLltii/6rmhqFMJqffUgknuRdpYlHw==}
+  copy-file@11.1.0:
+    resolution: {integrity: sha512-X8XDzyvYaA6msMyAM575CUoygY5b44QzLcGRKsK3MFmXcOvQa518dNPLsKYwkYsn72g3EiW+LE0ytd/FlqWmyw==}
     engines: {node: '>=18'}
 
   core-util-is@1.0.3:
@@ -4998,7 +4998,7 @@ snapshots:
       '@vercel/nft': 0.29.4(rollup@4.46.2)
       archiver: 7.0.1
       common-path-prefix: 3.0.0
-      copy-file: 11.0.0
+      copy-file: 11.1.0
       es-module-lexer: 1.7.0
       esbuild: 0.25.5
       execa: 8.0.1
@@ -6336,7 +6336,7 @@ snapshots:
     dependencies:
       is-what: 4.1.16
 
-  copy-file@11.0.0:
+  copy-file@11.1.0:
     dependencies:
       graceful-fs: 4.2.11
       p-event: 6.0.1
