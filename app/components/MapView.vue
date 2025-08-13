@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { iconFor } from '~~/utils/location-icons';
+import { iconForOrganization } from '~~/utils/organization-icons';
 
 const { locations, locateMe, focus } = useLocations();
 const emit = defineEmits(['open-menu']);
@@ -30,8 +30,8 @@ const emit = defineEmits(['open-menu']);
         <template #marker>
           <button @click="focus(location)" class="text-4xl leading-none cursor-pointer" :aria-label="`Select ${location.name}`">
             <img
-              :src="iconFor(location.type[0])"
-              :alt="location.type.join(', ')"
+              :src="iconForOrganization(location.organization)"
+              :alt="location.organization"
               class="h-11 w-11 object-contain"
             />
           </button>
