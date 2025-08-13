@@ -9,9 +9,7 @@ export function useLocations() {
   const filterTypes = useState<LocationType[]>('filterTypes', () => []);
   const filterOrgs = useState<string[]>('filterOrgs', () => []);
 
-  const types = computed<LocationType[]>(() =>
-    Array.from(new Set(allLocations.value.map(l => l.type))).sort()
-  );
+  const types = computed<LocationType[]>(() => Array.from(new Set(allLocations.value.map(l => l.type))).sort());
   const organizations = computed(() => Array.from(new Set(allLocations.value.map(l => l.organization))).sort());
 
   const locations = computed(() => {
@@ -27,7 +25,7 @@ export function useLocations() {
   function focus(location: Location) {
     selected.value = location;
     useMapbox('main-map', map => {
-      map?.flyTo({ center: location.coordinates, zoom: 10 });
+      map?.flyTo({ center: location.coordinates, zoom: 15 });
     });
   }
 
