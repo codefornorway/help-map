@@ -59,6 +59,12 @@ const googleMapsLink = computed(() =>
       >
         Source
       </a>
+      <div class="mt-4">
+        <h3 class="text-sm font-semibold">Report Error</h3>
+        <p class="text-sm text-gray-600">
+          If you see an error in this information, please help us by sending a correction.
+        </p>
+      </div>
       <img
         v-if="selected.organization === 'Røde Kors'"
         src="/logos/rode-kors.svg"

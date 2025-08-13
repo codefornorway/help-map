@@ -8,5 +8,8 @@ export const locationIconMap: Record<LocationType, string> = {
 };
 
 export function iconFor(type?: LocationType): string {
-  return (type && locationIconMap[type]) || locationIconMap.community;
+  if (type && type in locationIconMap) {
+    return locationIconMap[type];
+  }
+  return locationIconMap.community;
 }
