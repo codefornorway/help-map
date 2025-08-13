@@ -16,5 +16,5 @@ export interface Location {
   organization: string;
   organization_logo: string;
   city: string;
-  type: LocationType[];
+  type: [LocationType, ...LocationType[]];
 }
