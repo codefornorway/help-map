@@ -2460,7 +2460,8 @@
     "notes": null,
     "organization": "Røde Kors",
     "city": "Ringebu",
-    "data_updated": "2025-08-15"
+    "data_updated": "2025-08-15",
+    "type": ["Rescue"]
   },
   {
     "name": "Gausdal Røde Kors",
@@ -2529,7 +2530,8 @@
     "notes": null,
     "organization": "Røde Kors",
     "city": "Hore",
-    "data_updated": "2025-08-15"
+    "data_updated": "2025-08-15",
+    "type": ["Rescue"]
   },
   {
     "name": "Grindaheim Røde Kors",
