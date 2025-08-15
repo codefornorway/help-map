@@ -16,38 +16,43 @@ const googleMapsLink = computed(() =>
       <button @click="reset" class="text-sm cursor-pointer text-indigo-600 hover:underline">&larr; Back</button>
       <h2 class="text-lg font-semibold">{{ selected.name }}</h2>
       <img :src="selected.image" :alt="selected.name" class="w-full h-auto rounded" />
-      <p class="text-sm text-gray-600">
-        <strong>Description:</strong>
-        {{ selected.description }}
-      </p>
-      <p class="text-sm text-gray-600">
-        <strong>Type:</strong>
-        {{ selected.type.map((t: string) => t.charAt(0).toUpperCase() + t.slice(1)).join(', ') }}
-      </p>
-      <p class="text-sm text-gray-600">
-        <strong>Organization:</strong>
-        {{ selected.organization }}
-      </p>
-      <p class="text-sm text-gray-600">
-        <strong>Address:</strong>
-        {{ selected.address }}
-      </p>
-      <p class="text-sm text-gray-600">
-        <strong>Email:</strong>
+      <div class="text-sm text-gray-600">
+        <strong>Description</strong>
+        <p>{{ selected.description }}</p>
+      </div>
+      <a :href="googleMapsLink" target="_blank" rel="noopener" class="text-sm text-white bg-indigo-600 hover:bg-indigo-700 px-3 py-1 rounded inline-block transition">
+        Get Directions
+      </a>
+      <div class="text-sm text-gray-600">
+        <strong>Type</strong>
+        <p>{{ selected.type.map((t: string) => t.charAt(0).toUpperCase() + t.slice(1)).join(', ') }}</p>
+      </div>
+      <div class="text-sm text-gray-600">
+        <strong>Organization</strong>
+        <p>{{ selected.organization }}</p>
+      </div>
+      <div class="text-sm text-gray-600">
+        <strong>Address</strong>
+        <p>{{ selected.address }}</p>
+      </div>
+      <div class="text-sm text-gray-600 flex flex-col">
+        <strong>Email</strong>
         <a :href="`mailto:${selected.email}`" class="text-indigo-600 hover:underline">{{ selected.email }}</a>
-      </p>
-      <p class="text-sm text-gray-600">
-        <strong>Last updated:</strong>
-        {{ selected.data_updated }}
-      </p>
-      <div class="prose prose-sm" v-html="selected.notes"></div>
-      <a :href="googleMapsLink" target="_blank" rel="noopener" class="text-sm text-indigo-600 hover:underline">Open in Google Maps</a>
+      </div>
+      <div v-if="selected.notes" class="text-sm text-gray-600">
+        <strong>Notes</strong>
+        <p class="prose prose-sm" v-html="selected.notes"></p>
+      </div>
       <a :href="selected.source" target="_blank" rel="noopener" class="block text-sm text-indigo-600 hover:underline">Source</a>
       <div class="mt-4">
         <h3 class="text-sm font-semibold">Report Error</h3>
         <p class="text-sm text-gray-600">If you see an error in this information, please help us by sending a correction.</p>
       </div>
       <img v-if="selected.organization === 'Røde Kors'" src="/logos/rode-kors.svg" alt="Røde Kors logo" class="h-8 w-auto mt-4" />
+      <p class="text-sm text-gray-600">
+        Data updated on
+        {{ new Date(selected.data_updated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) }}
+      </p>
     </div>
 
     <div v-else>
