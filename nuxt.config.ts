@@ -1,15 +1,28 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
+  compatibilityDate: '2025-08-16',
+  future: { typescriptBundlerResolution: true },
+  css: ['~/assets/css/main.css'],
+  modules: ['nuxt-mapbox'],
+  mapbox: {
+    accessToken: process.env.MAPBOX_ACCESS_TOKEN,
+  },
+  app: {
+    head: {
+      title: 'Help Map',
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Find free aid locations across Norway — food, clothes, shelter.' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Help Map' },
+        { property: 'og:description', content: 'Find free aid locations across Norway — food, clothes, shelter.' },
+        { property: 'og:image', content: '/social-card.png' },
+      ],
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ['nuxt-mapbox'],
-  future: { compatibilityVersion: 4 },
-  mapbox: {
-    accessToken: process.env.MAPBOX_ACCESS_TOKEN as string,
-  },
-  css: ['@/assets/css/main.css'],
 });

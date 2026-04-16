@@ -29,19 +29,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "test": "node --experimental-strip-types --loader ./tests/loader.mjs --test tests/*.spec.ts"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
-    "nuxt": "^4.0.3",
-    "nuxt-mapbox": "1.6.3",
-    "tailwindcss": "^4.1.11",
-    "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
+    "@douxcode/vue-spring-bottom-sheet": "^3.2.0",
+    "nuxt": "^4.4.2",
+    "nuxt-mapbox": "1.6.4",
+    "vue": "^3.5.32",
+    "vue-router": "^5.0.4"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
   "devDependencies": {
-    "mapbox-gl": "^3.14.0"
+    "@tailwindcss/vite": "^4.2.2",
+    "mapbox-gl": "^3.21.0",
+    "tailwindcss": "^4.2.2"
   }
 }
