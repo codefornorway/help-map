@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { LocationItem } from "~/data/locations";
+
 const props = defineProps<{
   items: LocationItem[];
   selected: LocationItem | null;

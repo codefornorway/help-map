@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { TAGS, type TagKey } from "~/data/tags";
+
 const props = defineProps<{ activeTypes: TagKey[] }>();
 const emit = defineEmits<{ (e: "toggle-type", type: TagKey): void }>();
 </script>

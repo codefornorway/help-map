@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import BottomSheet from "@douxcode/vue-spring-bottom-sheet";
 import "@douxcode/vue-spring-bottom-sheet/dist/style.css";
+import type { LocationItem } from "~/data/locations";
+import { TAGS, type TagKey } from "~/data/tags";
 
 const props = defineProps<{
   items: LocationItem[];

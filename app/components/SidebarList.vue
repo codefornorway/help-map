@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import type { LocationItem } from "~/data/locations";
+import { TAGS, type TagKey } from "~/data/tags";
+import { slugify } from "~/utils/slug";
+
 const props = withDefaults(
   defineProps<{
     items: LocationItem[];
